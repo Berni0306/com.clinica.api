@@ -25,7 +25,7 @@ public class SecurityFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("aqui empieza el filter");
+        //System.out.println("aqui empieza el filter");
         var authHeader = request.getHeader("Authorization");
         //System.out.println(token);
         if (authHeader != null){
