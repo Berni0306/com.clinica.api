@@ -1,16 +1,14 @@
-package com.voll.api.domain.consulta.validaciones;
+package com.voll.api.domain.consulta.validacionesAgendar;
 
 import com.voll.api.domain.consulta.DatosAgendarConsulta;
-import com.voll.api.infra.errores.ValidacionDeIntegridad;
 import jakarta.validation.ValidationException;
 import org.springframework.stereotype.Component;
 
-import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
 @Component
-public class HorarioDeAnticipacion implements ValidadorDeConsultas{
+public class HorarioAgendaAnticipacion implements ValidadorAgendaConsultas {
 
     public void validar(DatosAgendarConsulta datosAgendarConsulta){
         var ahora = LocalDateTime.now();

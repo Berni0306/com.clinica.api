@@ -1,13 +1,21 @@
 package com.voll.api.domain.consulta;
 
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDateTime;
 
 public record DatosDetalleConsulta(
         Long id,
+        @NotNull
         Long idPaciente,
         Long idMedico,
-        LocalDateTime fecha) {
+        @NotNull
+        LocalDateTime fecha,
+        Boolean activo,
+        @NotNull
+        MotivoCancelacion motivoCancelacion) {
+
     public DatosDetalleConsulta(Consulta consulta) {
-        this(consulta.getId(), consulta.getPaciente().getId(), consulta.getMedico().getId(), consulta.getFecha());
+        this(consulta.getId(), consulta.getPaciente().getId(), consulta.getMedico().getId(), consulta.getFecha(), consulta.getActivo(), consulta.getMotivoCancelacion());
     }
 }

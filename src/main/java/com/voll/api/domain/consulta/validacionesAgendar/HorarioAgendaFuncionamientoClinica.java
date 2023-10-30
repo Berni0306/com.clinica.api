@@ -1,14 +1,13 @@
-package com.voll.api.domain.consulta.validaciones;
+package com.voll.api.domain.consulta.validacionesAgendar;
 
 import com.voll.api.domain.consulta.DatosAgendarConsulta;
-import com.voll.api.infra.errores.ValidacionDeIntegridad;
 import jakarta.validation.ValidationException;
 import org.springframework.stereotype.Component;
 
 import java.time.DayOfWeek;
 
 @Component
-public class HorarioDeFuncionamientoClinica implements ValidadorDeConsultas {
+public class HorarioAgendaFuncionamientoClinica implements ValidadorAgendaConsultas {
 
     public void validar(DatosAgendarConsulta datosAgendarConsulta){
 

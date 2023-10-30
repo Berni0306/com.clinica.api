@@ -1,9 +1,9 @@
-package com.voll.api.domain.consulta.validaciones;
+package com.voll.api.domain.consulta.validacionesAgendar;
 
 import com.voll.api.domain.consulta.DatosAgendarConsulta;
 
 
-public interface ValidadorDeConsultas {
+public interface ValidadorAgendaConsultas {
 
     public void validar(DatosAgendarConsulta datosAgendarConsulta);
 }

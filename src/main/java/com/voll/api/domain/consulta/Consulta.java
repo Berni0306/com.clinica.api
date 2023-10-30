@@ -30,7 +30,15 @@ public class Consulta {
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 
-    //////////////////fecha o data???????????????????????????????????????????
     private LocalDateTime fecha;
 
+    private Boolean activo;
+
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelacion motivoCancelacion;
+
+    public void eliminarConsulta(MotivoCancelacion motivoCancelacion) {
+        this.activo = false;
+        this.motivoCancelacion = motivoCancelacion;
+    }
 }

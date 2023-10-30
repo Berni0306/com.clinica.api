@@ -1,14 +1,13 @@
-package com.voll.api.domain.consulta.validaciones;
+package com.voll.api.domain.consulta.validacionesAgendar;
 
 import com.voll.api.domain.consulta.DatosAgendarConsulta;
-import com.voll.api.domain.paciente.Paciente;
 import com.voll.api.domain.paciente.PacienteRepository;
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PacienteActivo implements ValidadorDeConsultas{
+public class PacienteActivo implements ValidadorAgendaConsultas {
 
     @Autowired
     private PacienteRepository pacienteRepository;

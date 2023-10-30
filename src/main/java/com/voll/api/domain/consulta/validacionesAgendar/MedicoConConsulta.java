@@ -1,4 +1,4 @@
-package com.voll.api.domain.consulta.validaciones;
+package com.voll.api.domain.consulta.validacionesAgendar;
 
 import com.voll.api.domain.consulta.ConsultaRepository;
 import com.voll.api.domain.consulta.DatosAgendarConsulta;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MedicoConConsulta implements ValidadorDeConsultas {
+public class MedicoConConsulta implements ValidadorAgendaConsultas {
 
     @Autowired
     private ConsultaRepository consultaRepository;

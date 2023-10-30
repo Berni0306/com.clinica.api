@@ -3,11 +3,11 @@ package com.voll.api.controller;
 import com.voll.api.domain.consulta.AgendaDeConsultaService;
 import com.voll.api.domain.consulta.DatosAgendarConsulta;
 import com.voll.api.domain.consulta.DatosDetalleConsulta;
+import com.voll.api.domain.consulta.MotivoCancelacion;
 import com.voll.api.domain.medico.Especialidad;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,7 +21,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -61,7 +60,7 @@ class ConsultaControllerTest {
         //given
         var fecha = LocalDateTime.now().plusHours(1);
         var especialidad = Especialidad.ENDODONCIA;
-        var datos = new DatosDetalleConsulta(null, 2l, 5l, fecha);
+        var datos = new DatosDetalleConsulta(null, 2l, 5l, fecha, Boolean.TRUE, MotivoCancelacion.NO_CANCELADA);
 
         // when
         when(agendaDeConsultaService.agendar(any())).thenReturn(datos);
